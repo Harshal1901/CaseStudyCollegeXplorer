@@ -1,0 +1,110 @@
+﻿@model IEnumerable<CaseStudyClgXplorer.Models.Department>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Raw(TempData["InsertMessage"])
+@Html.Raw(TempData["UpdatetMessage"])
+@Html.Raw(TempData["DeleteMessage"])
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        font-size:16px;
+    }
+
+    .container {
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+</style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="container margin-left: none">
+    <table class="table table-bordered ">
+        <thead>
+            <tr>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.CollegeId)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.DepartmentId)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.DepartmentName)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Open)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.OBC)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.SC)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.ST)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.EWS)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.SeatAvailibility)
+                </th>
+
+                <th scope="col">
+                    <text>Action</text>
+                </th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CollegeId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DepartmentId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DepartmentName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Open)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OBC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SC)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ST)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EWS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SeatAvailibility)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Update", "Edit", new { id = item.DepartmentId })|
+                        @Html.ActionLink("Delete", "Delete", new { id = item.DepartmentId })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="@Url.Action("Create")">Add New Record</a>
+</div>

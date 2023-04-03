@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LoginDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="College">
+    <Key>
+      <PropertyRef Name="CollegeId" />
+    </Key>
+    <Property Name="CollegeId" Type="int" Nullable="false" />
+    <Property Name="CollegeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UniversityName" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Facility" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentId" />
+    </Key>
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+    <Property Name="CollegeId" Type="int" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Open" Type="float" />
+    <Property Name="OBC" Type="float" />
+    <Property Name="SC" Type="float" />
+    <Property Name="ST" Type="float" />
+    <Property Name="EWS" Type="float" />
+    <Property Name="SeatAvailibility" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="CollegeId">
+    <End Role="College" Type="Self.College" Multiplicity="1" />
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="College">
+        <PropertyRef Name="CollegeId" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="CollegeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LoginDbModelStoreContainer">
+    <EntitySet Name="College" EntityType="Self.College" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="CollegeId" Association="Self.CollegeId">
+      <End Role="College" EntitySet="College" />
+      <End Role="Department" EntitySet="Department" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,31 @@
+﻿@using CaseStudy.Models;
+@model UserModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+
+        @using (@Html.BeginForm())
+        {
+            foreach (var item in Model.Logins)
+            {
+            <table border="0">
+                <tr>UserName</tr>
+                <tr>@Html.TextBox(item.UserName)</tr>
+            </table>
+
+            }
+        }
+    </div>
+</body>
+</html>

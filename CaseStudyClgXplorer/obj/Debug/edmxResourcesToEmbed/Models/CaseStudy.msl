@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LoginDbModelStoreContainer" CdmEntityContainer="LoginDbEntities">
+    <EntitySetMapping Name="Colleges">
+      <EntityTypeMapping TypeName="LoginDbModel.College">
+        <MappingFragment StoreEntitySet="College">
+          <ScalarProperty Name="CollegeId" ColumnName="CollegeId" />
+          <ScalarProperty Name="CollegeName" ColumnName="CollegeName" />
+          <ScalarProperty Name="UniversityName" ColumnName="UniversityName" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Facility" ColumnName="Facility" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="LoginDbModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="CollegeId" ColumnName="CollegeId" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Open" ColumnName="Open" />
+          <ScalarProperty Name="OBC" ColumnName="OBC" />
+          <ScalarProperty Name="SC" ColumnName="SC" />
+          <ScalarProperty Name="ST" ColumnName="ST" />
+          <ScalarProperty Name="EWS" ColumnName="EWS" />
+          <ScalarProperty Name="SeatAvailibility" ColumnName="SeatAvailibility" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <!--Navbar-->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class=" navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">
+                        <img src="~/images/logo.jpg" class="logo-size" />
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse" >
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="@Url.Action("Index","Users")">
+                                <i class="glyphicon glyphicon-home"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Login", "Users")">
+                                <i class=" glyphicon glyphicon-log-in"r86,r̥></i>
+                                Login
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class=" glyphicon glyphicon-info-sign"></i>
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class=" glyphicon glyphicon-envelope"></i>
+                                Contact us
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        @RenderBody()
+
+
+        <!--Footer-->
+        <footer class="myfooter navbar-bottom">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>
+                        About Us
+                    </h3>
+                    <p>
+                        Welcome to CollegeXplorer We are a team of passionate individuals
+                        who are dedicated to helping students find the perfect engineering college.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3>
+                        UseFul Links
+                    </h3>
+                    <ul>
+                        <li><a href="#">Link1</a></li>
+                        <li><a href="#">Link2</a></li>
+                        <li><a href="#">Link3</a></li>
+                        <li><a href="#">Link4</a></li>
+                    </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h3>
+                            Contact Us
+                        </h3>
+                        <ul>
+                            <li><a href="#">FaceBook</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Youtube</a></li>
+                            <li><a href="#">Email</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="subfooter">
+                    <span>All Rights are Reserved to the Website 2023</span>
+
+                </div>
+
+</footer>
+
+        <script src="~/Scripts/jquery.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+    </div>
+</body>
+</html>

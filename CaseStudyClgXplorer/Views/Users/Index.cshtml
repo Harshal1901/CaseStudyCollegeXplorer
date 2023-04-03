@@ -1,0 +1,16 @@
+﻿@model IEnumerable<CaseStudyClgXplorer.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    
+    @Html.ActionLink("Create New", "Create")
+    
+</p>
+
+@Html.Raw(TempData["Message"])
